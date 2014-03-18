@@ -1,0 +1,9 @@
+*.iml
+.idea/
+target/
+*.properties
+
+# Logging-related
+logback.xml
+logback-test.xml
+/logs
