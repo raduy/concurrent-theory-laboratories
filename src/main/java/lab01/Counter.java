@@ -1,9 +1,11 @@
 package lab01;
 
+import lab02.ICounter;
+
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
  */
-public class Counter {
+public class Counter implements ICounter {
     private int counter;
 
     public Counter() {}

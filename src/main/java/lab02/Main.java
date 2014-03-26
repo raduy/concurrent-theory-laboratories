@@ -1,14 +1,19 @@
-package lab01;
+package lab02;
+
+import lab01.NonSaveDecrementer;
+import lab01.NonSaveIncrementer;
+import lab01.Parameters;
 
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
  */
-public class Run {
+public class Main {
+
     public static void startRun(int numberOfThreads, int numberOfIterations) {
         Parameters.NUMBER_OF_ITERATIONS = numberOfIterations;
         Parameters.NUMBER_OF_THREADS = numberOfThreads;
 
-        final Counter counter = new Counter(0);
+        final ICounter counter = new CounterWithSemaphore();
 
         System.out.println("" + numberOfThreads + " threads, " + Parameters.NUMBER_OF_ITERATIONS + " iterations.");
         Thread[] decrementers = new Thread[numberOfThreads];
@@ -38,8 +43,9 @@ public class Run {
 
     public static void main(String[] args) {
         startRun(1, 30);
-        startRun(1, 300000);
-        startRun(200, 30);
-        startRun(200, 300);
+        startRun(1, 30000);
+        startRun(20, 30);
+        startRun(20, 3000);
+
     }
 }

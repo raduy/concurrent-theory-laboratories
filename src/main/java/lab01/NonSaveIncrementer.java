@@ -1,12 +1,14 @@
 package lab01;
 
+import lab02.ICounter;
+
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
  */
 public class NonSaveIncrementer implements Runnable {
-    private Counter counter;
+    private ICounter counter;
 
-    public NonSaveIncrementer(Counter counter) {
+    public NonSaveIncrementer(ICounter counter) {
         this.counter = counter;
     }
 
