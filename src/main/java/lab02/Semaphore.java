@@ -9,18 +9,23 @@ public class Semaphore {
 
     public Semaphore(int size) {
         this.size = size;
-        this.actualSize = 0;
+        this.actualSize = size;
     }
 
     public synchronized void up() {
-        actualSize = (actualSize + 1) % (size + 1);
+        actualSize = actualSize + 1;
         this.notify();
     }
 
     public synchronized void down() throws InterruptedException {
-        while (!(actualSize < size)) {
+        while (!(actualSize > 0)) {
             this.wait();
         }
-        actualSize = actualSize > 0 ? actualSize - 1 : 0;
+        actualSize = actualSize - 1;
     }
 }
+
+//h/t
+//monitory z czerwonej ksiazki
+//przemyslec sposob implementacji w Java
+//czemu monitor z Javy to nie klasyczny monitor

@@ -23,7 +23,6 @@ public class Philosopher implements Runnable {
     private synchronized void think() throws InterruptedException {
         System.out.println("I'm " + id + "th philosopher and I'm thinking now.");
         wait(random.nextInt(5000));
-
     }
 
     private synchronized void eat() throws InterruptedException {

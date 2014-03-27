@@ -12,7 +12,6 @@ public class BinarySemaphore {
     }
 
     public synchronized void down() throws InterruptedException {
-//        System.out.println("Butler down");
 
         while (!signal) {
             this.wait();
