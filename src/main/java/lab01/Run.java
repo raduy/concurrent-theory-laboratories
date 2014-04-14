@@ -1,5 +1,7 @@
 package lab01;
 
+import lab01.counter.NonThreadSaveCounter;
+
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
  */
@@ -8,7 +10,7 @@ public class Run {
         Parameters.NUMBER_OF_ITERATIONS = numberOfIterations;
         Parameters.NUMBER_OF_THREADS = numberOfThreads;
 
-        final Counter counter = new Counter(0);
+        final NonThreadSaveCounter counter = new NonThreadSaveCounter(0);
 
         System.out.println("" + numberOfThreads + " threads, " + Parameters.NUMBER_OF_ITERATIONS + " iterations.");
         Thread[] decrementers = new Thread[numberOfThreads];

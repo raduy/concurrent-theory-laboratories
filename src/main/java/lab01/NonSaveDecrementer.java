@@ -1,6 +1,6 @@
 package lab01;
 
-import lab02.ICounter;
+import lab01.counter.ICounter;
 
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>

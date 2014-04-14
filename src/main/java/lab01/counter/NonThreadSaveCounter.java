@@ -1,16 +1,14 @@
-package lab01;
-
-import lab02.ICounter;
+package lab01.counter;
 
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
  */
-public class Counter implements ICounter {
+public class NonThreadSaveCounter implements ICounter {
     private int counter;
 
-    public Counter() {}
+    public NonThreadSaveCounter() {}
 
-    public Counter(int counter) {
+    public NonThreadSaveCounter(int counter) {
         this.counter = counter;
     }
 

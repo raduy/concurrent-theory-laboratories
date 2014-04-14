@@ -1,4 +1,4 @@
-package lab02;
+package lab01.counter;
 
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
