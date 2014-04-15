@@ -1,21 +1,22 @@
 package lab02;
 
 /**
+ * Simple Binary semaphore.
+ *
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
  */
 public class BinarySemaphore {
-    private boolean signal = true; //its up
+    private boolean signal = true; /* it's ready to take */
 
-    public synchronized void up() {
-        signal = true;
-        this.notify();
-    }
-
-    public synchronized void down() throws InterruptedException {
-
+    public synchronized void take() throws InterruptedException {
         while (!signal) {
             this.wait();
         }
         signal = false;
+    }
+
+    public synchronized void release() {
+        signal = true;
+        this.notify();
     }
 }

@@ -1,14 +1,14 @@
 package lab01;
 
-import counter.ICounter;
+import counter.*;
 
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
  */
-public class NonSaveDecrementer implements Runnable {
+public class Decrementer implements Runnable {
     private ICounter counter;
 
-    public NonSaveDecrementer(ICounter counter) {
+    public Decrementer(ICounter counter) {
         this.counter = counter;
     }
 

@@ -23,7 +23,7 @@ public class NonThreadSaveCounter implements ICounter {
     @Override
     public String toString() {
         return "Counter{" +
-                "counter=" + counter +
+                "counter=\t\t\t" + counter +
                 '}';
     }
 }

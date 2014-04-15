@@ -1,31 +1,36 @@
 package lab02;
 
 /**
+ * Counting semaphore.
+ *
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
  */
 public class Semaphore {
-    private final int size;
-    private int actualSize;
+    private int value;
+    private int waitingThreads = 0; /* explicit set to zero for clarity */
 
-    public Semaphore(int size) {
-        this.size = size;
-        this.actualSize = size;
+    public Semaphore(int value) {
+        this.value = value;
     }
 
-    public synchronized void up() {
-        actualSize = actualSize + 1;
-        this.notify();
-    }
-
-    public synchronized void down() throws InterruptedException {
-        while (!(actualSize > 0)) {
-            this.wait();
+    public synchronized void take() throws InterruptedException {
+        if (value > 0) {
+            value--;
+        } else {
+            waitingThreads++;
+            while(value <= 0) {
+                this.wait();
+            }
+            waitingThreads--;
+            value--;
         }
-        actualSize = actualSize - 1;
+    }
+
+    public synchronized void release() throws InterruptedException {
+        if (waitingThreads > 0) {
+            this.notify();
+        } else {
+            ++value;
+        }
     }
 }
-
-//h/t
-//monitory z czerwonej ksiazki
-//przemyslec sposob implementacji w Java
-//czemu monitor z Javy to nie klasyczny monitor
