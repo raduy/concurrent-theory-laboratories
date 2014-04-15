@@ -1,6 +1,6 @@
 package lab01;
 
-import lab01.counter.NonThreadSaveCounter;
+import counter.NonThreadSaveCounter;
 
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
