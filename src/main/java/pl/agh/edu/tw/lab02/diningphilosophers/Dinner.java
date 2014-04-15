@@ -1,7 +1,6 @@
-package lab02.diningphilosophers;
+package pl.agh.edu.tw.lab02.diningphilosophers;
 
-import lab02.BinarySemaphore;
-import lab02.Semaphore;
+import pl.agh.edu.tw.lab02.*;
 
 /**
  * Runner for dinning philosophers problem.

@@ -1,6 +1,6 @@
-package lab01;
+package pl.agh.edu.tw.lab01;
 
-import lab01.simple.SimpleThread;
+import pl.agh.edu.tw.lab01.simple.SimpleThread;
 
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>

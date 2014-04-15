@@ -1,4 +1,4 @@
-package counter;
+package pl.agh.edu.tw.counter;
 
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>

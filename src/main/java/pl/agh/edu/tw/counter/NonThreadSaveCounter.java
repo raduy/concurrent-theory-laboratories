@@ -1,4 +1,4 @@
-package counter;
+package pl.agh.edu.tw.counter;
 
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
@@ -23,7 +23,7 @@ public class NonThreadSaveCounter implements ICounter {
     @Override
     public String toString() {
         return "Counter{" +
-                "counter=\t\t\t" + counter +
+                "pl.agh.edu.tw.counter=\t\t\t" + counter +
                 '}';
     }
 }

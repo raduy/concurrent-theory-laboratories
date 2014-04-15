@@ -1,8 +1,7 @@
-package lab02.diningphilosophers;
+package pl.agh.edu.tw.lab02.diningphilosophers;
 
-import lab02.BinarySemaphore;
-import lab02.Semaphore;
 import org.apache.log4j.Logger;
+import pl.agh.edu.tw.lab02.*;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;

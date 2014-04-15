@@ -1,6 +1,6 @@
-package counter;
+package pl.agh.edu.tw.counter;
 
-import lab02.BinarySemaphore;
+import pl.agh.edu.tw.lab02.BinarySemaphore;
 import org.apache.log4j.Logger;
 
 

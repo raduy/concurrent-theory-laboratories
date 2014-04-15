@@ -1,9 +1,6 @@
-package lab02;
+package pl.agh.edu.tw.lab01;
 
-import lab01.Decrementer;
-import lab01.Incrementer;
-import lab01.Parameters;
-import counter.*;
+import pl.agh.edu.tw.counter.*;
 import org.apache.log4j.Logger;
 
 /**
@@ -11,10 +8,13 @@ import org.apache.log4j.Logger;
  */
 public class Run {
     private final static Logger LOGGER = Logger.getLogger(Run.class.getCanonicalName());
+   
+    public static void startRun(int numberOfThreads, int numberOfIterations) {
 
-    public static void startRun(final ICounter counter, int numberOfThreads, int numberOfIterations) {
         Parameters.NUMBER_OF_ITERATIONS = numberOfIterations;
         Parameters.NUMBER_OF_THREADS = numberOfThreads;
+
+        final NonThreadSaveCounter counter = new NonThreadSaveCounter(0);
 
         LOGGER.info("" + numberOfThreads + " threads, " + Parameters.NUMBER_OF_ITERATIONS + " iterations.");
 
@@ -40,25 +40,13 @@ public class Run {
             e.printStackTrace();
         }
 
-        LOGGER.info(counter);
+        System.out.println(counter);
     }
 
     public static void main(String[] args) {
-
-        final ICounter nonThreadSaveCounter = new NonThreadSaveCounter();
-
-        LOGGER.info("------------ NON THREAD SAVE COUNTER ----------------");
-        startRun(nonThreadSaveCounter, 1, 30);
-        startRun(nonThreadSaveCounter, 1, 30000);
-        startRun(nonThreadSaveCounter, 20, 30);
-        startRun(nonThreadSaveCounter, 20, 3000);
-
-        final ICounter synchronizedCounter = new SynchronizedCounter();
-
-        LOGGER.info("------------ THREAD SAVE COUNTER --------------------");
-        startRun(synchronizedCounter, 1, 30);
-        startRun(synchronizedCounter, 1, 30000);
-        startRun(synchronizedCounter, 20, 30);
-        startRun(synchronizedCounter, 20, 3000);
+        startRun(1, 30);
+        startRun(1, 300000);
+        startRun(200, 30);
+        startRun(200, 300);
     }
 }

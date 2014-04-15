@@ -1,4 +1,4 @@
-package lab01.simple;
+package pl.agh.edu.tw.lab01.simple;
 
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>

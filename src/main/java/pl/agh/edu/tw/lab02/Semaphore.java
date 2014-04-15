@@ -1,4 +1,4 @@
-package lab02;
+package pl.agh.edu.tw.lab02;
 
 /**
  * Counting semaphore.

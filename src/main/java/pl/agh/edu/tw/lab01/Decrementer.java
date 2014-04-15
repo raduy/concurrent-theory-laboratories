@@ -1,6 +1,6 @@
-package lab01;
+package pl.agh.edu.tw.lab01;
 
-import counter.*;
+import pl.agh.edu.tw.counter.*;
 
 /**
  * @author Lukasz Raduj <raduj.lukasz@gmail.com>
